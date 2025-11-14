@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jos' Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="res/01.jpg" as="image">
 </head>
 <body>
-    <div class="background"></div>
+    <div class="background" id="bg"></div>
     <div class="content">
         <div class="project-container">
             <div class="project-image">
@@ -46,11 +47,30 @@
                 listItem.classList.add('active');
                 projectDesc.innerHTML = project.description;
                 if (project.url) {
-                    projectDesc.innerHTML += `<a href="${project.url}" target="_blank">Go >>></a>`;
+                    projectDesc.innerHTML += ` <a href="${project.url}" target="_blank">Go >>></a>`;
                 }
             }
             projectList.appendChild(listItem);
         });
+
+        const bgEl = document.getElementById('bg');
+        const sources = ['res/01.jpg','res/02.png','res/03.png','res/04.png'];
+        bgEl.style.backgroundImage = `url('${sources[0]}')`;
+
+        const preloadAll = sources.map(src => new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(src);
+            img.onerror = reject;
+            img.src = src;
+        }));
+
+        Promise.all(preloadAll)
+            .then(() => {
+                bgEl.classList.add('bg-animate');
+            })
+            .catch(() => {
+                /* 保持首图，不启动动画 */
+            });
     </script>
 </body>
 </html>
