@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jos' Home</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preload" href="res/01.jpg" as="image">
 </head>
 <body>
-    <div class="background" id="bg"></div>
+    <div class="background">
+        <div class="geometric-shape shape-1"></div>
+        <div class="geometric-shape shape-2"></div>
+        <div class="geometric-shape shape-3"></div>
+        <div class="geometric-shape shape-4"></div>
+        <div class="geometric-shape shape-5"></div>
+        <div class="geometric-shape shape-6"></div>
+        <div class="geometric-triangle tri-1"></div>
+        <div class="geometric-triangle tri-2"></div>
+        <div class="geometric-square sq-1"></div>
+        <div class="geometric-square sq-2"></div>
+    </div>
     <div class="content">
         <div class="project-container">
             <div class="project-image">
-                <img id="current-image" src="res/icon.png" alt="Project Image">
+                <img src="res/icon.png" alt="Jos Avatar">
             </div>
-            <h1>Hello, I'm Jos</h1> <!-- 添加标题文本 -->
-            <hr class="main-divider"> <!-- 添加分割线 -->
+            <h1>Hello, I'm Jos</h1>
+            <hr class="main-divider">
             <div class="project-details">
                 <ul id="project-list"></ul>
                 <p id="project-desc"></p>
@@ -52,25 +62,6 @@
             }
             projectList.appendChild(listItem);
         });
-
-        const bgEl = document.getElementById('bg');
-        const sources = ['res/01.jpg','res/02.png','res/03.png','res/04.png'];
-        bgEl.style.backgroundImage = `url('${sources[0]}')`;
-
-        const preloadAll = sources.map(src => new Promise((resolve, reject) => {
-            const img = new Image();
-            img.onload = () => resolve(src);
-            img.onerror = reject;
-            img.src = src;
-        }));
-
-        Promise.all(preloadAll)
-            .then(() => {
-                bgEl.classList.add('bg-animate');
-            })
-            .catch(() => {
-                /* 保持首图，不启动动画 */
-            });
     </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 const Projects = [
     {
         name: 'Home',
-        description: '简单生活，深刻思考，让每一步都充满意义。',
+        description: '把时间慷慨地给予美好，把精力毫无保留地献给热爱。',
         image: 'images/project1.jpg'
     },
     {
