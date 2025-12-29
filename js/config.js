@@ -14,6 +14,6 @@ const Projects = [
         name: "TransX",
         description: '轻松应对本地化挑战，一站式多语言管理方案。',
         image: 'images/project1.jpg',
-        url: 'https://jyhu.github.io/TransXHelp'
+        url: 'https://jyhu.github.io/X'
     }
 ]
