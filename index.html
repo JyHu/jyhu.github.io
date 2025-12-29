@@ -20,15 +20,53 @@
         <div class="geometric-square sq-2"></div>
     </div>
     <div class="content">
-        <div class="project-container">
-            <div class="project-image">
-                <img src="res/icon.png" alt="Jos Avatar">
+        <div class="card-flip">
+            <div class="project-container card-front">
+                <div class="project-image" id="avatar">
+                    <img src="res/icon.png" alt="Jos Avatar">
+                </div>
+                <h1>Hello, I'm Jos</h1>
+                <div class="social-links">
+                    <a href="mailto:hello@example.com" target="_blank" title="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/jyhu" target="_blank" title="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/yourhandle" target="_blank" title="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://weibo.com/yourhandle" target="_blank" title="微博">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9.68 14.89c-2.56.43-4.77-.88-4.94-2.92-.16-2.04 1.74-3.96 4.3-4.39 2.56-.43 4.77.88 4.94 2.92.16 2.04-1.74 3.96-4.3 4.39zm7.94-5.05c-.32-.09-.54-.16-.37-.58.36-.92.4-1.71.01-2.28-.74-1.06-2.76-1.01-5.07-.03 0 0-.73.32-.54-.26.35-1.17.3-2.15-.23-2.72-1.2-1.29-4.38.05-7.1 2.98-2.04 2.19-3.22 4.51-3.22 6.67 0 3.92 4.54 6.3 8.98 6.3 5.82 0 9.7-3.34 9.7-5.99 0-1.6-1.22-2.51-2.16-2.09zm-4.37 8.22c-3.48.31-6.49-1.22-6.73-3.42-.24-2.2 2.41-4.26 5.89-4.57 3.48-.31 6.49 1.22 6.73 3.42.24 2.2-2.41 4.26-5.89 4.57zm6.9-11.82c-.78-.78-1.82-1.08-2.77-.91-.21.04-.35.24-.31.45.04.21.24.35.45.31.67-.12 1.4.09 1.95.64.55.55.76 1.28.64 1.95-.04.21.1.41.31.45h.07c.19 0 .35-.14.38-.33.17-.95-.13-1.99-.91-2.77z"/>
+                        </svg>
+                    </a>
+                </div>
+                <hr class="main-divider">
+                <div class="project-details">
+                    <ul id="project-list"></ul>
+                    <p id="project-desc"></p>
+                </div>
             </div>
-            <h1>Hello, I'm Jos</h1>
-            <hr class="main-divider">
-            <div class="project-details">
-                <ul id="project-list"></ul>
-                <p id="project-desc"></p>
+            <div class="project-container card-back">
+                <div class="back-close" id="backClose">✕</div>
+                <h2>关于我</h2>
+                <hr class="main-divider">
+                <div class="back-content">
+                    <p>把时间浪费在美好的事物上</p>
+                    <p>把精力投入在热爱的领域里</p>
+                    <div class="contact-info">
+                        <p>📧 Email: hello@example.com</p>
+                        <p>🔗 GitHub: @jyhu</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -36,6 +74,38 @@
     <script>
         const projectList = document.getElementById('project-list');
         const projectDesc = document.getElementById('project-desc');
+        const cardFlip = document.querySelector('.card-flip');
+        const avatar = document.getElementById('avatar');
+        const backClose = document.getElementById('backClose');
+        const cardFront = document.querySelector('.card-front');
+        const cardBack = document.querySelector('.card-back');
+
+        // 更新卡片高度
+        function updateCardHeight() {
+            if (cardFlip.classList.contains('flipped')) {
+                cardFlip.style.height = cardBack.offsetHeight + 'px';
+            } else {
+                cardFlip.style.height = cardFront.offsetHeight + 'px';
+            }
+        }
+
+        // 初始化高度
+        setTimeout(() => {
+            cardFlip.style.height = cardFront.offsetHeight + 'px';
+        }, 0);
+
+        // 头像点击翻转
+        avatar.addEventListener('click', () => {
+            cardFlip.classList.add('flipped');
+            setTimeout(updateCardHeight, 50);
+        });
+
+        // 关闭按钮翻转回来
+        backClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            cardFlip.classList.remove('flipped');
+            setTimeout(updateCardHeight, 50);
+        });
 
         Projects.forEach((project, index) => {
             const listItem = document.createElement('li');
