@@ -278,12 +278,6 @@ body, html {
     justify-content: center;
 }
 
-/* 只在未翻转时响应hover */
-.card-flip:not(.flipped) .card-front:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
-}
-
 .project-image {
     position: absolute;
     top: -50px;
