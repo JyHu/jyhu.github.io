@@ -57,82 +57,42 @@
             </div>
             <div class="project-container card-back">
                 <div class="back-close" id="backClose">✕</div>
-                <h2>关于我</h2>
+<h2>
+                    <svg class="music-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18V5l12-2v13"/>
+                        <circle cx="6" cy="18" r="3" fill="white"/>
+                        <circle cx="18" cy="16" r="3" fill="white"/>
+                    </svg>
+                    Music
+                </h2>
                 <hr class="main-divider">
-                <div class="back-content">
-                    <p>把时间浪费在美好的事物上</p>
-                    <p>把精力投入在热爱的领域里</p>
-                    <div class="contact-info">
-                        <p>📧 Email: hello@example.com</p>
-                        <p>🔗 GitHub: @jyhu</p>
+                <div class="music-player">
+                    <div class="album-cover">
+                        <div class="vinyl" id="vinyl">
+                            <div class="vinyl-center"></div>
+                        </div>
                     </div>
+                    <div class="song-info">
+                        <div class="song-title" id="songTitle">Select a song</div>
+                        <div class="song-artist" id="songArtist">Artist</div>
+                    </div>
+                    <div class="progress-container">
+                        <span class="time" id="currentTime">0:00</span>
+                        <input type="range" class="progress-bar" id="progressBar" min="0" max="100" value="0">
+                        <span class="time" id="duration">0:00</span>
+                    </div>
+                    <div class="controls">
+                        <button class="control-btn" id="prevBtn">⏮</button>
+                        <button class="control-btn play-btn" id="playBtn">▶</button>
+                        <button class="control-btn" id="nextBtn">⏭</button>
+                    </div>
+                    <audio id="audioPlayer"></audio>
                 </div>
             </div>
         </div>
     </div>
     <script src="assets/js/config.js"></script>
-    <script>
-        const projectList = document.getElementById('project-list');
-        const projectDesc = document.getElementById('project-desc');
-        const cardFlip = document.querySelector('.card-flip');
-        const avatar = document.getElementById('avatar');
-        const backClose = document.getElementById('backClose');
-        const cardFront = document.querySelector('.card-front');
-        const cardBack = document.querySelector('.card-back');
-
-        // 更新卡片高度
-        function updateCardHeight() {
-            if (cardFlip.classList.contains('flipped')) {
-                cardFlip.style.height = cardBack.offsetHeight + 'px';
-            } else {
-                cardFlip.style.height = cardFront.offsetHeight + 'px';
-            }
-        }
-
-        // 初始化高度
-        setTimeout(() => {
-            cardFlip.style.height = cardFront.offsetHeight + 'px';
-        }, 0);
-
-        // 头像点击翻转
-        avatar.addEventListener('click', () => {
-            cardFlip.classList.add('flipped');
-            setTimeout(updateCardHeight, 50);
-        });
-
-        // 关闭按钮翻转回来
-        backClose.addEventListener('click', (e) => {
-            e.stopPropagation();
-            cardFlip.classList.remove('flipped');
-            setTimeout(updateCardHeight, 50);
-        });
-
-        Projects.forEach((project, index) => {
-            const listItem = document.createElement('li');
-            listItem.textContent = project.name;
-            listItem.addEventListener('mouseover', () => {
-                document.querySelectorAll('#project-list li').forEach(li => li.classList.remove('active'));
-                listItem.classList.add('active');
-                projectDesc.innerHTML = project.description;
-                if (project.url) {
-                    projectDesc.innerHTML += ` <a href="${project.url}" target="_blank">Go >>></a>`;
-                }
-            });
-            if (project.url) {
-                listItem.addEventListener('click', () => {
-                    window.open(project.url, '_blank');
-                });
-            }
-            if (index === 0) {
-                listItem.classList.add('active');
-                projectDesc.innerHTML = project.description;
-                if (project.url) {
-                    projectDesc.innerHTML += ` <a href="${project.url}" target="_blank">Go >>></a>`;
-                }
-            }
-            projectList.appendChild(listItem);
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
     <footer class="footer">
         <p>&copy; 2025 Jos. All rights reserved.</p>
     </footer>
