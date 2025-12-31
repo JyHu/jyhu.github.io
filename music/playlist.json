@@ -1,27 +1,67 @@
 [
     {
+        "filename": "m0.mp3",
+        "title": "点在半山腰",
+        "artist": "段兴华"
+    },
+    {
         "filename": "m1.mp3",
-        "title": "Lofi Study Beats",
-        "artist": "Chillhop Music"
+        "title": "Ocean and dreams",
+        "artist": "Aria Flux"
     },
     {
         "filename": "m2.mp3",
-        "title": "Ambient Relaxation",
-        "artist": "Calm Vibes"
+        "title": "Salvatore",
+        "artist": "Niki Luparelli"
     },
     {
         "filename": "m3.mp3",
-        "title": "Upbeat Instrumental",
-        "artist": "Happy Tunes"
+        "title": "Zhurek (Isko Alvarez remix)",
+        "artist": "Adam"
     },
     {
         "filename": "m4.mp3",
-        "title": "Classical Focus",
-        "artist": "Mozart Ensemble"
+        "title": "The Climb",
+        "artist": "Cœur de pirate"
     },
     {
         "filename": "m5.mp3",
-        "title": "Electronic Chillout",
-        "artist": "Synthwave Collective"
+        "title": "Sleepyhead",
+        "artist": "Galen Crew"
+    },
+    {
+        "filename": "m6.mp3",
+        "title": "Warm up (Lento Violento & Astro Musico Mix)",
+        "artist": "GIGI D'AGOSTINO,Luca Noise"
+    },
+    {
+        "filename": "m7.mp3",
+        "title": "Wolf's Heart",
+        "artist": "Leo Rojas"
+    },
+    {
+        "filename": "m8.mp3",
+        "title": "Salvatore",
+        "artist": "Niki Luparelli"
+    },
+    {
+        "filename": "m9.mp3",
+        "title": "Mul Mantra",
+        "artist": "Snatam Kaur"
+    },
+    {
+        "filename": "m10.mp3",
+        "title": "Thank You for Everything Dear",
+        "artist": "Vanny Vabiola"
+    },
+    {
+        "filename": "m11.mp3",
+        "title": "DROOL(Explicit)",
+        "artist": "VodKe,HSHK"
+    },
+    {
+        "filename": "m12.mp3",
+        "title": "Zurkhnii Amrag",
+        "artist": "Zamilan"
     }
 ]
