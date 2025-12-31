@@ -45,17 +45,18 @@ const songTitle = document.getElementById('songTitle');
 const songArtist = document.getElementById('songArtist');
 const vinyl = document.getElementById('vinyl');
 
+
 let playlist = [];
 let currentSongIndex = 0;
 
-// 从JSON加载播放列表
-fetch('assets/music/playlist.json')
+// 从 GitHub raw 获取播放列表
+fetch('https://raw.githubusercontent.com/JyHu/jyhu.github.io/assets/music/playlist.json')
     .then(response => response.json())
     .then(data => {
         playlist = data.map(song => ({
             title: song.title,
             artist: song.artist,
-            url: `assets/music/${song.filename}`
+            url: `https://raw.githubusercontent.com/JyHu/jyhu.github.io/assets/music/${song.filename}`
         }));
         if (playlist.length > 0) {
             loadSong(0);
@@ -151,4 +152,47 @@ Projects.forEach((project, index) => {
         }
     }
     projectList.appendChild(listItem);
+});
+
+const listBtn = document.getElementById('listBtn');
+const playlistMenu = document.getElementById('playlistMenu');
+
+function renderPlaylistMenu() {
+    if (!playlist || playlist.length === 0) return;
+    let html = '<button class="close-btn" id="closePlaylist">✕</button>';
+    html += '<h3>播放列表</h3><ul>';
+    playlist.forEach((song, idx) => {
+        html += `<li class="${idx === currentSongIndex ? 'current' : ''}" data-idx="${idx}">${song.title} - ${song.artist}</li>`;
+    });
+    html += '</ul>';
+    playlistMenu.innerHTML = html;
+    playlistMenu.style.display = 'block';
+
+    document.getElementById('closePlaylist').onclick = () => {
+        playlistMenu.style.display = 'none';
+    };
+    playlistMenu.querySelectorAll('li').forEach(li => {
+        li.onclick = function() {
+            const idx = parseInt(this.getAttribute('data-idx'));
+            if (!isNaN(idx)) {
+                currentSongIndex = idx;
+                loadSong(currentSongIndex);
+                audioPlayer.play();
+                playBtn.textContent = '⏸';
+                vinyl.classList.add('playing');
+                renderPlaylistMenu();
+            }
+        };
+    });
+}
+
+listBtn.addEventListener('click', function(event) {
+    renderPlaylistMenu();
+    event.stopPropagation();
+});
+
+document.addEventListener('click', function(e) {
+    if (playlistMenu.style.display === 'block' && !playlistMenu.contains(e.target) && e.target !== listBtn) {
+        playlistMenu.style.display = 'none';
+    }
 });
