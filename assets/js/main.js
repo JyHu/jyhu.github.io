@@ -192,7 +192,7 @@ listBtn.addEventListener('click', function(event) {
 });
 
 document.addEventListener('click', function(e) {
-    if (playlistMenu.style.display === 'block' && !playlistMenu.contains(e.target) && e.target !== listBtn) {
+    if (playlistMenu.style.display === 'block' && !playlistMenu.contains(e.target) && !listBtn.contains(e.target)) {
         playlistMenu.style.display = 'none';
     }
 });
