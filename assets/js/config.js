@@ -14,6 +14,12 @@ const Projects = [
         name: "TransX",
         description: '轻松应对本地化挑战，一站式多语言管理方案。',
         image: 'images/project1.jpg',
-        url: 'https://yunxi.cyou/TransX'
+        url: 'https://yunxi.cyou/w.tx'
+    },
+    {
+        name: "Stellect",
+        description: "把想做的事，变成看得见的星迹。",
+        image: 'images/project1.jpg',
+        url: 'https://yunxi.cyou/w.st'
     }
 ]
