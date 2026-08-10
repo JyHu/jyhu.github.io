@@ -21,5 +21,11 @@ const Projects = [
         description: "把想做的事，变成看得见的星迹。",
         image: 'images/project1.jpg',
         url: 'https://yunxi.cyou/w.st'
+    },
+    {
+        name: "Puzzly",
+        description: "一分钟也能玩，一局也能尽兴。",
+        image: 'images/project1.jpg',
+        url: 'https://yunxi.cyou/w.pz'
     }
 ]
